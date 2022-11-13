@@ -1,0 +1,333 @@
+:root {
+    font-size: 16px;
+    font-family:'Times New Roman', Times, serif;
+
+    --text-primary: black;
+    --text-secondary: white;
+    --bg-1: rgb(66, 116, 66);
+    --bg-2:rgb(145, 233, 145);
+    --bg-3:whitesmoke;
+    
+    --avatar: url("https://github.com/gegds.png");
+    --avatar2: url("https://github.com/gegds.png");
+    --avatar3: url("https://github.com/ppsavila.png");
+    --avatar4: url("https://github.com/MatheusPinheirodeSouza1.png");
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+      "sideColumn nav nav nav"
+      "sideColumn content content content";
+    grid-template-rows: 0.6fr 4fr;
+    grid-template-columns: 6rem 1fr 1fr 1fr;
+  }
+
+  .sideColumn {
+    background-color: var(--bg-1);
+    width: 15rem;
+    height: 100vh;
+    position: fixed;
+  }
+  
+  .menuItem {
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .menuItem > * {
+    cursor: pointer;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .sideColumn > *:not(:first-child) > * {
+    padding: 1rem 0.5rem 0.5rem 1rem;
+    font-size: 22px;
+    padding-left: 20px;
+  }
+  .sideColumn > *:not(:first-child) > img {
+    width: calc(20px + 0.5vw);
+    height: calc(20px + 0.5vw);
+  }
+
+  .sideColumn > div:nth-child(8) {
+    padding-top: 40px;
+  }
+
+  .dashboard img {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(40px + 0.7vw);
+    height: calc(40px + 0.7vw);
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+
+
+  .dashboard h1 {
+    font-size: 1.6rem;
+    padding-top: 10px;
+} 
+
+  
+
+  /* Navbar Styling */
+  .navbar {
+    grid-area: nav;
+    background-color: var(--bg-2);
+    padding: 1.5rem 12rem;
+    border-bottom: 2px solid rgb(219, 219, 219);
+    top: 0;
+  }
+  
+  .topNav {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    margin-bottom: 2.5rem;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    width: 80%;
+  }
+  
+  .search > input {
+    display: inline-block;
+    border: 0;
+    background-color: var(--bg-1);
+    padding: 0.5rem 1.5rem;
+    margin-left: 1.25rem;
+    border-radius: 5px;
+    width: min(80%, 600px);
+    margin-right: 20px;
+  }
+  
+  .navbar .account {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 900;
+  }
+  
+  .avatar {
+    background: var(--avatar) center center / cover no-repeat;
+    border-radius: 50%;
+  }
+  
+  .account .avatar {
+    margin: 0 1rem 0 2.5rem;
+    height: 40px;
+    width: 40px;
+  }
+  
+  img {
+    cursor: pointer;
+  }
+  
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .profile .avatar {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .greeting {
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+  .profile .name {
+    font-size: 1.6rem;
+    font-weight: 800;
+  }
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .btn {
+    background-color: var(--bg-1);
+    color: var(--text-secondary);
+    font-weight: 800;
+    padding: 0.5rem 1.8rem;
+    border-radius: 7px;
+    font-size: 20px;
+    border: 1px solid whitesmoke;
+    cursor: pointer;
+  }
+
+  
+  /* Main Content */
+  
+  .content {
+    grid-area: content;
+    background-color: var(--bg-3);
+    display: grid;
+    padding-left: 10rem;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: min-content 1fr;
+    gap: 2rem;
+    grid-template-areas:
+      "projects announcements"
+      "projects trending";
+  }
+  
+  .content h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+  
+  .card {
+    background-color: var(--bg-2);
+    padding: 2rem;
+    border-radius: 0.6rem;
+    max-width: 25vw;
+  }
+  
+  .projects {
+    grid-area: projects;
+  }
+  
+  .projects .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  .projects .card {
+    background-color: var(--bg-2);
+    border-left: 10px solid var(--bg-1);
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+  }
+
+
+  .projects .card-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    padding-bottom: 1rem;
+  }
+  .projects .card-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  
+  .projects .icons {
+    margin-top: auto;
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.4rem;
+    align-items: center;
+    padding-bottom: 5px;
+    padding-right: 5px;
+  }
+  
+  .announcements {
+    grid-area: announcements;
+    margin-bottom: 1rem;
+  }
+  
+  .announcement {
+    width: 25ch;
+    padding: 1rem 0;
+
+  }
+  
+  
+  .announcement h5 {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+  }
+  
+  .announcement p {
+    font-size: 1rem;
+    overflow: hidden;
+  }
+  
+  .announcement + .announcement {
+    border-top: rgb(0, 0, 0) 1px solid;
+  }
+  
+  .trending {
+    grid-area: trending;
+  }
+  
+  .trending .card {
+    padding: 1.5rem;
+  }
+  
+  .trend {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  
+  .trend + .trend {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .trend .account {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.9rem;
+  }
+  
+  .trend .username {
+    margin-bottom: 0.15rem;
+    font-weight: 700;
+  }
+  
+  .trend-1 .avatar2 {
+    background: var(--avatar2) center center / cover no-repeat;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  .trend-2 .avatar3 {
+    background: var(--avatar3) center center / cover no-repeat;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  .trend-3 .avatar4 {
+    background: var(--avatar4) center center / cover no-repeat;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+ 
